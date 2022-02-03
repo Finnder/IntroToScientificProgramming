@@ -1,4 +1,4 @@
-# Multiplying Rabits
+# Multiplying Rabbits
 # By: Finnegan McGuire
 # Status: Incomplete
 
@@ -11,15 +11,17 @@ There will be 89 pairs of rabbits.
 # Rabits to start with
 startingRabbits = 2
 
-# Total number of rabbits
-rabbits = startingRabbits
-
 # Gets user input for amount of months gone by
 months = int(input('Enter total months: '))
     
-# Calculate pairs of rabits
+# Generate pairs of rabits depending on months gone by
 def rabbitmaker(number_of_months):
-    pass 
+    rabbits = startingRabbits
+
+    for x in range(number_of_months):
+        rabbits += rabbits ** 2
+
+    print(rabbits)
 
 # Runs the function
 rabbitmaker(months)
