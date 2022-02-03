@@ -2,13 +2,13 @@
 # By: Finnegan McGuire
 # Status: Incomplete
 
-
-
 n = int(input('Enter a Number: '))
 
 # Calcualte the prime factors of the number given
-def calculate(number):
+def find_prime_numbers(number):
+    primeNumbers = []
     pass
+    
 
 
 """
