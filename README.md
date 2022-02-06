@@ -1,3 +1,3 @@
 # Intro To Scientific Programming
 
-- Class I'm taking at ASU.
+- Classes I'm taking at ASU.
