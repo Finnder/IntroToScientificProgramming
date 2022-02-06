@@ -16,12 +16,34 @@ months = int(input('Enter total months: '))
     
 # Generate pairs of rabits depending on months gone by
 def rabbitmaker(number_of_months):
-    rabbits = startingRabbits
+    
+    rabbits = None
 
-    for x in range(number_of_months):
-        rabbits += (rabbits/2) * 2
+    # TODO: Figure out formula to figure out pairs of rabbits
+    
 
     print(rabbits)
 
 # Run the function -> outputs rabbits after x amount of months
 rabbitmaker(months)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
