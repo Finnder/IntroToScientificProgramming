@@ -17,16 +17,24 @@ How many rows to print: 10
        *******************
 """
 
+# input checking to see if input is valid for algorithm (requires int)
+while True:
+    try:
+        # Ask users to input amount of rows to print.
+        rows = int(input('How many rows to print: '))
+        break
 
-rows = int(input('How many rows to print: '))
+    # If user does not enter a valid input
+    except ValueError:
+        print('Please Enter A Valid Input')
 
-# Creates and Displays Tree
+# Gather Input and Creates and Displays Tree
 def createTree(number):
     
     i = 0 # Current Iteration
     incrementRate = 1 # How many char are added to each side of center each iteration
     treeChar = '*' # What char prints on the tree
-
+    
     while i <= number:
         
         # Steps:
@@ -38,5 +46,8 @@ def createTree(number):
         # Increment
         i = i + incrementRate
 
+
 # Call Function to create tree
 createTree(rows)
+
+

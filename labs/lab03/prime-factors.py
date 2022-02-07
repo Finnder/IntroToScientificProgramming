@@ -1,10 +1,8 @@
 # Prime Factors 
 # By: Finnegan McGuire
 # Status: Incomplete
-import math
 
-# Get user input
-user_number = int(input('Enter a Number: '))
+import math
 
 # Calcualte the prime factors of the number given
 def find_prime_factors(number):
@@ -19,7 +17,6 @@ def find_prime_factors(number):
     
     # Figure out the next prime factorizations
     for i in range(3, int(math.sqrt(number)) + 1, 2):
-        
         while number % i == 0:
             prime_factorizations.append(i)
             number = number / i
@@ -39,8 +36,20 @@ def DisplayPrimeNumberInfo(number):
     
     # Display all factorizations of 'user_number'
     for factorizations in primeFactorizations:
-        print(factorizations)
-    
+        print(round(factorizations))
+
+while True:
+    # Get user input
+    try:
+        user_number = int(input('Enter a Number: '))
+        break
+
+    except ValueError:
+        print('Please enter a number')
+
+
+
+DisplayPrimeNumberInfo(round(user_number))
 
 """
 Sample Input and Output:

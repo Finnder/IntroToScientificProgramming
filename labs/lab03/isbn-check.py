@@ -3,7 +3,10 @@
 # Status: Complete
 
 # Request User Input for ISBN Number
-ISBN_number = input('Enter an ISBN number: ')
+
+
+while True:
+    ISBN_number = int(input('Enter an ISBN number: '))
 
 # Calculate if number is a valid ISBN number. (Returns -> True/False)
 def ISBN_Checker(x):
