@@ -9,7 +9,7 @@ userIncome = int(input("Enter Taxable Income: "))
 # Determine income bracket rate
 # Returns -> Float
 def IncomeBracketRate(income):
-    if income >= 0 and income <= 9700:
+    if income >= 0 and income <= 9700: # Make it more simple by just using 'income <= 9700'
         return 0.10
 
     elif income >= 9701 and income <= 39475:

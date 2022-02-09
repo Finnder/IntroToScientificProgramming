@@ -8,28 +8,34 @@ Enter total months: 10
 There will be 89 pairs of rabbits.
 """
 
-# Rabbits to start with
-startingRabbits = 2
+while True:
 
-# Gets user input for amount of months gone by
-months = int(input('Enter total months: '))
+    try:
+        # Gets user input for amount of months gone by
+        months = int(input('Enter total months: '))
+        break
+
+    except ValueError:
+        print("Please enter a valid number") 
     
 # Generate pairs of rabits depending on months gone by
-def rabbitmaker(number_of_months):
-    
-    rabbits = None
+def pairsOfRabbits(number_of_months):
+
+    pairs = 1
 
     # TODO: Figure out formula to figure out pairs of rabbits
-    
+    if number_of_months <= 2:
+        pairs = 1
 
-    print(rabbits)
+    else:
+        pass
+
+    return pairs
 
 # Run the function -> outputs rabbits after x amount of months
-rabbitmaker(months)
+amountOfPairs = pairsOfRabbits(months)
 
-
-
-
+print("There will be " + str(amountOfPairs) + " pairs of rabbits.")
 
 
 

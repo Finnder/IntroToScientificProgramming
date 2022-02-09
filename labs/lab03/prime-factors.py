@@ -15,15 +15,17 @@ def find_prime_factors(number):
         prime_factorizations.append(2)
         number = number / 2
     
-    # Figure out the next prime factorizations
+    # Calculate the next prime factorizations using the 'math' import for square rooting
     for i in range(3, int(math.sqrt(number)) + 1, 2):
         while number % i == 0:
             prime_factorizations.append(i)
             number = number / i
     
+    # if number is greater then 2 then we found another prime factorization
     if number > 2:
         prime_factorizations.append(number)
 
+    # return the prime factorizations array
     return prime_factorizations
 
 # Displays all info related to the prime number
@@ -46,7 +48,6 @@ while True:
 
     except ValueError:
         print('Please enter a number')
-
 
 
 DisplayPrimeNumberInfo(round(user_number))
