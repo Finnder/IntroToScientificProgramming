@@ -8,6 +8,8 @@ Enter total months: 10
 There will be 89 pairs of rabbits.
 """
 
+debug = True
+
 while True:
 
     try:
@@ -22,13 +24,18 @@ while True:
 def pairsOfRabbits(number_of_months):
 
     pairs = 1
-
+    
     # TODO: Figure out formula to figure out pairs of rabbits
     if number_of_months <= 2:
-        pairs = 1
+        return pairs
 
-    else:
-        pass
+    for months in range(number_of_months):
+        if debug:
+            print(str(months) + ':[' + str(pairs) + ' Pairs]')
+        
+        # The month that the first pair becomes mature
+        if months >= 1:
+            pairs += pairs ** months
 
     return pairs
 

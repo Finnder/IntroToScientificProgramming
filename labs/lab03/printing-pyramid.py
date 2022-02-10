@@ -30,12 +30,13 @@ while True:
 
 # Gather Input and Creates and Displays Tree
 def createTree(number):
-    
+
     i = 0 # Current Iteration
     incrementRate = 1 # How many char are added to each side of center each iteration
     treeChar = '*' # What char prints on the tree
     
-    while i <= number:
+    # number is -1 to account for i starting at 0
+    while i <= (number - 1):
         
         # Steps:
         # 1. Add a space based on the amount of tree lines to create
