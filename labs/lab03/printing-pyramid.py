@@ -41,14 +41,12 @@ def createTree(number):
         # Steps:
         # 1. Add a space based on the amount of tree lines to create
         # 2. Backspace depending on i (increases by one each iteration)
-        # 3. Add tree chars depedning on i to each side of tree center
+        # 3. Add tree chars depending on i to each side of tree center
         print((' '*number) + ('\b'*i) + ((treeChar * i) + treeChar + (treeChar * i)))
 
         # Increment
         i = i + incrementRate
 
-
 # Call Function to create tree
 createTree(rows)
-
 
