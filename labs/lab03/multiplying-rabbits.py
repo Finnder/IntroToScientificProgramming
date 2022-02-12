@@ -23,21 +23,29 @@ while True:
 # Generate pairs of rabits depending on months gone by
 def pairsOfRabbits(number_of_months):
 
-    pairs = 1
-    
+    childPairs = 1
+    maturePairs = 0 
+    previousChildCount = childPairs
+
     # TODO: Figure out formula to figure out pairs of rabbits
     if number_of_months <= 2:
-        return pairs
+        return totalPairs
 
+    # Adding +1 to account for months past
     for months in range(number_of_months):
-        if debug:
-            print(str(months) + ':[' + str(pairs) + ' Pairs]')
         
-        # The month that the first pair becomes mature
-        if months >= 1:
-            pairs += pairs ** months
+        previousChildCount = childPairs 
+        
+        # The month that the first pair becomes mature (start generating rabbits)
+        if months == 1:
+            maturePairs = 1
 
-    return pairs
+        childPairs = maturePairs 
+        maturePairs += previousChildCount
+
+    totalPairs = maturePairs + childPairs
+
+    return totalPairs
 
 # Run the function -> outputs rabbits after x amount of months
 amountOfPairs = pairsOfRabbits(months)
