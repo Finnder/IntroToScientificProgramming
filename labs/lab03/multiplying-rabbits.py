@@ -8,8 +8,6 @@ Enter total months: 10
 There will be 89 pairs of rabbits.
 """
 
-debug = True
-
 while True:
 
     try:
@@ -29,7 +27,7 @@ def pairsOfRabbits(number_of_months):
 
     # TODO: Figure out formula to figure out pairs of rabbits
     if number_of_months <= 2:
-        return totalPairs
+        return 1
 
     # Adding +1 to account for months past
     for months in range(number_of_months):
