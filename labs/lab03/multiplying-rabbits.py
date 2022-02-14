@@ -21,11 +21,12 @@ while True:
 # Generate pairs of rabits depending on months gone by
 def pairsOfRabbits(number_of_months):
 
+    # Initialize Variables
     childPairs = 1
     maturePairs = 0 
     previousChildCount = childPairs
 
-    # TODO: Figure out formula to figure out pairs of rabbits
+    # If user entered 2 or less months. No rabbits are created untill month 3
     if number_of_months <= 2:
         return 1
 

@@ -2,6 +2,7 @@
 # By: Finnegan McGuire
 # Status: Complete
 
+ISBN_number = input("Enter an ISBN number: ")
 
 # Checks to see if user entered only usable ISBN characters
 def CheckInputOfUser(userInput):
@@ -20,9 +21,6 @@ def CheckInputOfUser(userInput):
     
     # Returns if the input is valid or not (True or False)
     return inputValid
-
-# Request User Input for ISBN Number
-ISBN_number = input('Enter an ISBN number: ')
 
 # Calculate if number is a valid ISBN number. (Returns -> True/False)
 def ISBN_Checker(x):
