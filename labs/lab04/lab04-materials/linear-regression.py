@@ -2,6 +2,19 @@ f = open("weather-data.txt", "r")
 
 # TODO: Find the slope m and the y-intercept of the regression line.
 
+
+def FindSlope(data):
+    x = []
+    
+    for i in data:
+        print(i)
+
+def FindYIntercept():
+    pass
+
+
+
+
 print ("The slope is " + str(m))
 print ("The y-intercept is " + str(c))
 
@@ -30,4 +43,3 @@ plt.plot(x, line, 'r')
 plt.xlabel("Year")
 plt.ylabel("Temperature")
 plt.show()
-"""
