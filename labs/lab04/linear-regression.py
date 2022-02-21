@@ -1,23 +1,21 @@
-f = open("weather-data.txt", "r")
+f = open("./lab04-materials/weather-data.txt", "r")
 
 # TODO: Find the slope m and the y-intercept of the regression line.
 
 
-def FindSlope(data):
-    x = []
-    
-    for i in data:
-        print(i)
+def ReformatPoint(x, y):
+    # Covert to int and float to use math on it 
+    x = int(x)
+    y = float(y)
+    new_x = x - 1929
+    point = [new_x, y]
+    return point 
 
-def FindYIntercept():
-    pass
+for points in f:
+    x = points.split()[0]
+    y = points.split()[1]
 
-
-
-
-print ("The slope is " + str(m))
-print ("The y-intercept is " + str(c))
-
+    print(ReformatPoint(x, y))
 
 
 """
@@ -45,3 +43,4 @@ plt.plot(x, line, 'r')
 plt.xlabel("Year")
 plt.ylabel("Temperature")
 plt.show()
+"""

@@ -49,4 +49,3 @@ def createTree(number):
 
 # Call Function to create tree
 createTree(rows)
-
