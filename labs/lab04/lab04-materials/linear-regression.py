@@ -18,6 +18,8 @@ def FindYIntercept():
 print ("The slope is " + str(m))
 print ("The y-intercept is " + str(c))
 
+
+
 """
 # Code to plot the graph
 f = open("weather-data.txt", "r")

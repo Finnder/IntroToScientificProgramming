@@ -8,12 +8,9 @@ for x in fruitsFile:
     fruits.append(x)
 
 for fruit in fruits:
-    print(fruit)
     if fruit == fruitToFind:
-        print('Found Fruit')
         numberOfFruit += 1
 
 fruitsFile.close()
 
-print(fruits)
 print('The number of avocados is ', numberOfFruit)
