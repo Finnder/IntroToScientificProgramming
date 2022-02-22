@@ -1,31 +1,36 @@
 f = open("./lab04-materials/weather-data.txt", "r")
 
-# TODO: Find the slope m and the y-intercept of the regression line.
+# TODO:
+# - Compute the slope
+# - Compute the y intercept 
+# - Then store in m and c
+# - Print data
 
+def ComputeSlope(x1, y1, x2, y2):
+    slope = (y2 - y1) / (x2 - x1)
+    return slope
 
-def ReformatPoint(x, y):
-    # Covert to int and float to use math on it 
-    x = int(x)
-    y = float(y)
-    new_x = x - 1929
-    point = [new_x, y]
-    return point 
+def ComputeYIntercept():
+    pass
 
-for points in f:
-    x = points.split()[0]
-    y = points.split()[1]
+def GetAverage(List):
+    return sum(List) / len(List)
 
-    print(ReformatPoint(x, y))
-
-
-"""
 # Code to plot the graph
-f = open("weather-data.txt", "r")
 x = list()
 y = list()
-xlabels = list()
+
+x_average = GetAverage(x)
+y_average = GetAverage(y)
+
+# Gather Slope and Y intercept data
+m = ComputeSlope()
+c = ComputeYIntercept()
+
+labels = list()
 
 xbase = None
+
 for line in f:
     a,b = line.split()
     if xbase is None:
@@ -37,10 +42,11 @@ f.close()
 
 import matplotlib.pyplot as plt
 plt.plot(x, y, 'bo')
-line = [m * x[i] + c for i in range(len(x))]
-plt.plot(x, line, 'r')
+#line = [m * x[i] + c for i in range(len(x))]
+#plt.plot(x, line, 'r')
 
 plt.xlabel("Year")
 plt.ylabel("Temperature")
 plt.show()
-"""
+
+print(x, y)
