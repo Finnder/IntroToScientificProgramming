@@ -1,4 +1,12 @@
+# Linear Regression
+# By: Finnegan McGuire
+# Status: Incomplete
+
+import matplotlib.pyplot as plt
+
 f = open("./lab04-materials/weather-data.txt", "r")
+
+n = 71 # Points in data
 
 # TODO:
 # - Compute the slope
@@ -6,12 +14,16 @@ f = open("./lab04-materials/weather-data.txt", "r")
 # - Then store in m and c
 # - Print data
 
-def ComputeSlope(x1, y1, x2, y2):
-    slope = (y2 - y1) / (x2 - x1)
-    return slope
+def CalculateSlope(X, Y, X_AVG, Y_AVG):
+    numerator = 0
+    denominator = 0
 
-def ComputeYIntercept():
-    pass
+    for i in range(n):
+        numerator += (X[i] - X_AVG) * (Y[i] - Y_AVG)
+        denominator += (X[i] - X_AVG) ** 2
+
+    slope = (numerator / denominator)
+    return slope
 
 def GetAverage(List):
     return sum(List) / len(List)
@@ -20,33 +32,41 @@ def GetAverage(List):
 x = list()
 y = list()
 
-x_average = GetAverage(x)
-y_average = GetAverage(y)
-
-# Gather Slope and Y intercept data
-m = ComputeSlope()
-c = ComputeYIntercept()
-
 labels = list()
-
 xbase = None
 
+# Getting Data from file
 for line in f:
     a,b = line.split()
     if xbase is None:
         xbase = float(a)
     x.append(float(a)-xbase)
     y.append(float(b))
-    xlabels.append(int(a))
-f.close()
+    labels.append(int(a))
 
-import matplotlib.pyplot as plt
+# Get Averages
+xAvg = GetAverage(x)
+yAvg = GetAverage(y)
+
+f.close() # Close file
+
+# Calculate 
+m = CalculateSlope(x, y, xAvg, yAvg)
+c = yAvg - (m * xAvg)
+
+# Display Slope and Y intercept
+print('The slope is ', m)
+print('The y-intercept is ', c)
+
+# Plot the data using plt
 plt.plot(x, y, 'bo')
-#line = [m * x[i] + c for i in range(len(x))]
-#plt.plot(x, line, 'r')
 
+line = [m * x[i] + c for i in range(len(x))]
+plt.plot(x, line, 'r')
+
+# Add labels to dot chart
 plt.xlabel("Year")
 plt.ylabel("Temperature")
-plt.show()
 
-print(x, y)
+# Show data to user
+plt.show()
