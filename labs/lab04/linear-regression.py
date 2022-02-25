@@ -1,6 +1,6 @@
 # Linear Regression
 # By: Finnegan McGuire
-# Status: Incomplete
+# Status: Complete
 
 import matplotlib.pyplot as plt
 
