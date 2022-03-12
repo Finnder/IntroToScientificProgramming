@@ -9,9 +9,15 @@ def f1(x):
 
 A = float(input('A:'))
 x = 1
+i = 0
 
-for i in range(100):
-    x = x - f0(x, A)/f1(x)
+while True:
+    print(i, x)
+    i += 1
+    p = x
+    x = x - (x**2 - A)/(2 * x)
+    if abs(p - x) < 0.00001:
+        break
 
 print('guess', x)
 print('sqrt', math.sqrt(A))

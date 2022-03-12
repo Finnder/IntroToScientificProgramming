@@ -73,6 +73,3 @@ for c in inpf.read():
 # Close files (good practice)
 outf.close()
 inpf.close()
-
-
-
