@@ -1,22 +1,24 @@
+# Calculating Pi
+# By: Finnegan McGuire
+# Status: Complete
+
 import math
 
 n = 100 # Iterations
 
+# Calculate pi
 def ContinuedFractions(iterations):
     numerator = 4
     numberToAdd = iterations * 2 - 1
     denominator = 1
     
     for i in range(iterations):
-       denominator = numberToAdd + (((n - i)**2) / denominator)
+       denominator = numberToAdd + (((iterations - i)**2) / denominator)
        numberToAdd -= 2
 
     return 4 / denominator
 
-
 continuedFractionsPi = ContinuedFractions(n)
-
-print(continuedFractionsPi)
 
 # Output
 print("Pi computed using continued fractions is", continuedFractionsPi)
