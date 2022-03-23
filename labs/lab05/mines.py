@@ -1,9 +1,7 @@
 # Mines
 # By: Finnegan McGuire
-# Status: 
 
 """
-Sample Input (mines.txt): Sample Output:
 ........**...... ....1233**211.11
 .....***...*...* ...12***322*212*
 ....*........*.. ...1*4421.112*21
@@ -23,7 +21,6 @@ Sample Input (mines.txt): Sample Output:
 """
 
 file = open("./lab05-materials/mines.txt", "r") # open mines file
-
 
 
 
