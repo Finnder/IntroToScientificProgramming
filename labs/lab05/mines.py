@@ -18,9 +18,22 @@
 ....*.*.*....**. 1111*2*3*2..1**2
 ...............* ...1121211..234*
 .............*.. ............1*21
+
+GRID: 16x16
 """
 
 file = open("./lab05-materials/mines.txt", "r") # open mines file
+file = file.read()
 
+rows = ([],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[])
 
+def DefineGrid():
+    for i in range(len(rows)):
+        for x in range(16):
+            rows.append(file[x])
+        
 
+def GetGridPoint(row, column):
+    return rows[row][column]
+
+DefineGrid()
