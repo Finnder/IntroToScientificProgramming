@@ -21,19 +21,81 @@
 
 GRID: 16x16
 """
+board = []
+newBoard = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]] #16x16 array
+with open("./lab05-materials/mines.txt", "r") as file:
+    lines = file.readlines()
 
-file = open("./lab05-materials/mines.txt", "r") # open mines file
-file = file.read()
+for line in lines:
+    board += [[char for char in line.strip()]]
 
-rows = ([],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[])
+# Checks point 3x3 area
+def CheckForBombs(row, column):
+    numOfBombs = 0
+    
+    if board[row][column] == '*':
+        return '*'
 
-def DefineGrid():
-    for i in range(len(rows)):
-        for x in range(16):
-            rows.append(file[x])
-        
+    try:
+        if board[row][column - 1] == '*' and column - 1 >= 0:
+            numOfBombs += 1
 
-def GetGridPoint(row, column):
-    return rows[row][column]
+    except IndexError:
+        pass
 
-DefineGrid()
+    try:
+        if board[row][column + 1] == '*':
+            numOfBombs += 1
+
+    except IndexError:
+        pass
+
+    try:
+        if board[row - 1][column - 1] == '*' and column >= 0:
+            numOfBombs += 1
+
+    except IndexError:
+        pass
+    try:
+        if board[row - 1][column + 1] == '*':
+            numOfBombs += 1
+
+    except IndexError:
+        pass
+
+    try:
+        if board[row - 1][column] == '*':
+            numOfBombs += 1
+    except IndexError:
+        pass
+
+    try:
+        if board[row + 1][column] == '*':
+            numOfBombs += 1
+    except IndexError:
+        pass
+    try:
+        if board[row + 1][column + 1] == '*':
+            numOfBombs += 1
+    except IndexError:
+        pass
+    try:
+        if board[row + 1][column - 1] == '*' and column - 1 >= 0:
+            numOfBombs += 1
+    except IndexError:
+        pass
+
+    if numOfBombs == 0:
+        return '.'
+
+    return str(numOfBombs)
+
+# CHECK BOMBS
+for x in range(0, 16):
+    for i in range(0, 16):
+        newBoard[x].append(CheckForBombs(x, i))
+
+# DISPLAY OUTPUT
+for i in newBoard:
+    line = ''.join(i)
+    print(line)

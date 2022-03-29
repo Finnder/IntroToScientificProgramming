@@ -18,15 +18,40 @@ Output:
 Black is in check
 """
 
-file = open("./lab05-materials/chess.txt","r")
-file = file.read()
+board = []
 
-DefineRows() # Defines the rows
-print(file)
+# Open file
+with open("./lab05-materials/chess.txt","r") as file:
+    lines = file.readlines() # Store lines
 
-isCheck = Check(rows) # check if king is in check
+# Append board array with board
+for line in lines:
+    board += [[char for char in line.strip()]]
 
-if isCheck:
-    print("Black King is in check.")
-else: 
-    print("Black King is not in check.")
+
+def GetRow(rowSelection):
+    return board[rowSelection][0:8]
+
+def GetColumn(columnSelection):
+    return board[0:8][columnSelection]
+
+def CheckTheCheck():
+    blackInCheck = False
+    
+    for row in board:
+        for char in rows:
+            if char == '.':
+                pass
+
+            if char == 'Q':
+                pass
+
+
+
+
+
+    return blackInCheck
+
+print("ROW:", GetRow(0))
+print("COLUMN:", GetColumn(0))
+
