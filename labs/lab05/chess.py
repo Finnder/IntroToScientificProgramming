@@ -36,8 +36,9 @@ def kingAttack(y, x):
                 pass
 
 def knightAttack(y, x):
-    for l in [2, -2]:
-        for s in [1, -1]:
+
+    for l in [2, -2]: # Check Y
+        for s in [1, -1]: # Check Left and Right
             try:
                 if y + l >= 0 and x + s >= 0:
                     if board[y+l][x+s] == 'k':
