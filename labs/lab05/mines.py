@@ -51,20 +51,20 @@ def CheckForBombs(row, column):
         pass
 
     try:
-        if board[row - 1][column - 1] == '*' and column >= 0:
+        if board[row - 1][column - 1] == '*' and column - 1 >= 0 and row - 1 >= 0:
             numOfBombs += 1
 
     except IndexError:
         pass
     try:
-        if board[row - 1][column + 1] == '*':
+        if board[row - 1][column + 1] == '*' and row - 1 >= 0:
             numOfBombs += 1
 
     except IndexError:
         pass
 
     try:
-        if board[row - 1][column] == '*':
+        if board[row - 1][column] == '*' and row - 1 >= 0:
             numOfBombs += 1
     except IndexError:
         pass
@@ -91,8 +91,8 @@ def CheckForBombs(row, column):
     return str(numOfBombs)
 
 # CHECK BOMBS
-for x in range(0, 16):
-    for i in range(0, 16):
+for x in range(16):
+    for i in range(16):
         newBoard[x].append(CheckForBombs(x, i))
 
 # DISPLAY OUTPUT
