@@ -22,9 +22,27 @@ Enter bead sum k: 5
 2 3
 1 4
 """
+debug = True
 
-inputFile = input("Enter input file: ")
-beadsum = input("Enter bead sum k: ")
+if debug:
+    inputFile = 'small-beads.in'
+else:
+    inputFile = input("Enter input file: ")
 
-file = open(f'./lab06-materials/{inputFile}')
+beadsum = int(input("Enter bead sum k: "))
+
+file = open(f'./lab06-materials/{inputFile}').read()
+
+numbers = []
+def BeadyProblem():
+    for i in file:
+        for j in file:
+            if i != '\n' and j != '\n':
+                print(i, j)
+            if i + j == beadsum:
+                numbers.append([i, j])
+
+BeadyProblem()
+
+print(numbers)
 
