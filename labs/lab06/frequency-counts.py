@@ -1,8 +1,5 @@
-# Word and Letter Counts
-# By: Finnegan McGuire
+# Word and Letter Counts By: Finnegan McGuire
 
-file = open('./lab06-materials/LOTR.txt')
-file = file.read()
 
 """
 Output Format:
@@ -19,28 +16,32 @@ d 40614
 """
 
 knownWords = []
-knownLetters = []
+knownChar = []
 
-def AppendDict(word):
+def AppendDictString(word):
+   
     dictionary = {
         "word": word,
-        "count": 0
+        "count": 1
     }
 
-    knownWords.append(dictionary)
+    if len(word) == 1:
+        knownChar.append(dictionary)
+    else:
+        knownWords.append(dictionary)
+
 
 def GetAllWords():
-    for i in file:
-        for j in knownWords:
-            if j[0] != i: 
-                pass
+    file = './lab06-materials/LOTR.txt'
 
-            if j[0] == i:
-                j[1] += 2
-                
+    with open(file, 'r') as file:
+        for line in file:
+            for word in line.split():
+                AppendDictString(word)
+                for char in word.split():
+                    AppendDictString(char)
+
 GetAllWords()
-print(knownWords)
 
-def GetAllLetters():
-    pass 
-
+for j in knownWords:
+    print(j)
