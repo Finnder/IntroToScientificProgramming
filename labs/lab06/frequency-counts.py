@@ -18,8 +18,20 @@ e 95181
 d 40614
 """
 
+knownWords = []
+knownLetters = []
+
 def GetAllWords():
-    pass
+    for i in file:
+        for j in knownWords:
+            if j[0] != i: 
+                pass
+
+            if j[0] == i:
+                j[1] += 2
+                
+GetAllWords()
+print(knownWords)
 
 def GetAllLetters():
     pass 
