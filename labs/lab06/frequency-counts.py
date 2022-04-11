@@ -21,6 +21,14 @@ d 40614
 knownWords = []
 knownLetters = []
 
+def AppendDict(word):
+    dictionary = {
+        "word": word,
+        "count": 0
+    }
+
+    knownWords.append(dictionary)
+
 def GetAllWords():
     for i in file:
         for j in knownWords:
