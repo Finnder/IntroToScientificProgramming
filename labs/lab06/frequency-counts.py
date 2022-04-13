@@ -15,33 +15,31 @@ e 95181
 d 40614
 """
 
-knownWords = []
-knownChar = []
+file = './lab06-materials/LOTR.txt'
 
-def AppendDictString(word):
-   
-    dictionary = {
-        "word": word,
-        "count": 1
-    }
+knownWords = {}
+knownChar = {}
 
-    if len(word) == 1:
-        knownChar.append(dictionary)
-    else:
-        knownWords.append(dictionary)
+with open(file, 'r') as file:
+    for line in file:
+        for word in line.split():
+            if word in knownWords:
+                knownWords[word] = knownWords[word] + 1
+            else:
+                knownWords[word] = 1
+            
+            print(word.split())
 
-
-def GetAllWords():
-    file = './lab06-materials/LOTR.txt'
-
-    with open(file, 'r') as file:
-        for line in file:
-            for word in line.split():
-                AppendDictString(word)
-                for char in word.split():
-                    AppendDictString(char)
-
-GetAllWords()
+            for char in word:
+                if char in knownChar:
+                    knownChar[char] = knownChar[char] + 1
+                else:
+                    knownChar[char] = 1
 
 for j in knownWords:
-    print(j)
+    print(j, knownWords[j])
+
+for i in knownChar:
+    print(i, knownChar[i])
+
+
