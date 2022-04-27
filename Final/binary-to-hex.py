@@ -6,10 +6,11 @@ The hex value of the string is 2a6b
 
 binString = input('Enter a binary string: ')
 
-def CalcBinary():
-    pass
-`
+lenOfString = len(binString)
+pairs = lenOfString / 4
 
+for i in range(pairs):
+    currentBin = binString[0:4]
+    print(currentBin + " -> " + ConvertToHex(currentBin))
 
-for i in range(0, 3):
-
+    
