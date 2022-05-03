@@ -1,17 +1,28 @@
 import random
 
 # yahtzee.py 
-attempts = 0
-rolls = 0
+total = 0
+avgAttempts = 0
 
 def rollDice():
     return random.randint(1, 6)
 
 def experiment():
-    firstRoll = []
-    for i in range(6):
-       firstRoll.append(rollDice())
+    attempts = 0
 
-experiment()
+    currentRoll = [0, 0, 0, 0, 0]
+    while currentRoll != [6, 6, 6, 6, 6]:
 
-print(f'In expectation, it takes {attempts} attemps to roll {rolls} sixes')
+        currentRoll = [rollDice(), rollDice(), rollDice(), rollDice(), rollDice()]
+
+        attempts += 1
+
+    return attempts
+
+    
+for i in range(1000):
+    total += experiment()
+
+avgAttempts = total / 1000
+
+print(f'In expectation, it takes {avgAttempts} attemps to roll 5 sixes')
