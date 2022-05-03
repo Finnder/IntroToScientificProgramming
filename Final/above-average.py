@@ -15,6 +15,7 @@ else:
     fileName = input('Enter input file name: ')
 
 with open(fileName, 'r') as file:
+
     total = 0 
     i = 0
     aboveAvgPercent = 0
@@ -25,8 +26,8 @@ with open(fileName, 'r') as file:
 
     avg = total / i
 
-    for items in file:
-        if int(items) > avg:
+    for i in file:
+        if int(i) > avg:
             aboveAvgPercent += 1
     
 print("The average is " + str(avg))

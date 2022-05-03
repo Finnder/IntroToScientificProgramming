@@ -1,0 +1,5 @@
+aboveaverage.py
+
+    In the above average program the goal was to be able to calculate the average, percetage of people in the list above that average and if the student is above average. The first step I knew I had to accomplesh was to read the file. I then initialized variables for specific reasons, for instance on line 20 the total variables was to store the sum of all the numbers in the list, this is so that we could calculate the average in line 28. In line 30 to 32 I just simply added to the aboveAvgPercent variable and then turned it into a percent on line 34 to get all people above the average.  
+
+
